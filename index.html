@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CSS ANIMATION DEMO</title>
+  </head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" charset="utf-8"></script>
+  <style media="screen">
+    body{
+      background: #370669;
+    }
+
+    .mainMargin{
+      margin-left: 20px;
+      margin-right: 15px;
+    }
+    /*this is the css for the Instructions Div*/
+    .containerInst{
+      margin: 20px;
+      width: 98%;
+      height: 200px;
+      border-radius: 20px;
+      background: black;
+      border-color: #8D0072;
+      border-style: solid;
+
+    }
+    /*this is the css for the Instructions Div font*/
+    .instructions{
+      text-align: center;
+      margin: auto;
+      line-height:200px;
+      vertical-align:middle;
+      color: white;
+    }
+    /*this is the css for the Tumble Flip*/
+    .container{
+      width: 190px;
+      height: 190px;
+      margin: 3px;
+      background: #BDF400;
+      display: inline-block;
+      border-radius: 40px;
+    }
+    .container-active{
+      display: inline-block;
+      animation: move 1s 1 ease-in-out;
+      animation-direction: alternate, reverse, normal;
+    }
+
+    .h1{
+      text-align: center;
+      margin:auto;
+      line-height:200px;
+      vertical-align:middle;
+      color: #470985;
+    }
+
+    @keyframes move {
+      0%{}
+      50%{
+        transform: translate(200px, 200px)
+        rotate(360deg);
+        background: blue;
+        opacity: 0.5;
+      }
+      100%{
+        transform: translate(-300px, -300px)
+        rotate(-360deg);
+        background: green;
+        opacity: 50.0;
+        transform-origin: 90% 10%;
+      }
+    }
+
+    /*this is the css for the Front Flip*/
+    .container2{
+      width: 190px;
+      height: 190px;
+      margin: 3px;
+      background: #BDF400;
+      display: inline-block;
+      border-radius: 40px;
+      float: none;
+    }
+    .container2-active{
+      animation: move2 1s 1 ease-in-out;
+      animation-direction: alternate, reverse, normal;
+    }
+    @keyframes move2 {
+      0%{}
+      50%{
+        transform: translate(0px, 0px)
+        rotate(360deg);
+        background: blue;
+        opacity: 2.5;
+      }
+      100%{
+        transform: translate(0px, 0px)
+        rotate(360deg);
+        background: green;
+        opacity: 50.0;
+        transform-origin: -90% 10%;
+      }
+    }
+    /*this is the css for the Back Flip*/
+    .container3{
+      width: 190px;
+      height: 190px;
+      margin: 3px;
+      background: #BDF400;
+      display: inline-block;
+      border-radius: 40px;
+      float: none;
+    }
+    .container3-active{
+      animation: move3 1s 1 ease-in-out;
+      animation-direction: alternate, reverse, normal;
+    }
+    @keyframes move3 {
+      0%{}
+      50%{
+        transform: translate(0px, 0px)
+        rotate(-360deg);
+        background: blue;
+        opacity: 2.5;
+      }
+      100%{
+        transform: translate(0px, 0px)
+        rotate(-360deg);
+        background: green;
+        opacity: 50.0;
+        transform-origin: 90% -10%;
+      }
+    }
+    /*this is the css for the Drop Bounce*/
+    .container4{
+      width: 190px;
+      height: 190px;
+      margin: 3px;
+      background: #BDF400;
+      display: inline-block;
+      border-radius: 40px;
+    }
+    .container4-active{
+      display: inline-block;
+      animation: bounce 1s 1 ease-in-out;
+    }
+
+    @keyframes bounce {
+  0% {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transform: translate3d(0,-20,0);
+  }
+
+  40%{
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transform: translate3d(0, 650px, 0);
+  }
+
+  70% {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transform: translate3d(0, 600px, 0);
+  }
+  80% {
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform: translate3d(0, 650px, 0);
+  }
+
+  90% {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transform: translate3d(0,20,0);
+  }
+}
+/*this is the css for the Z Formation*/
+.container5{
+  width: 190px;
+  height: 190px;
+  margin: 3px;
+  background: #BDF400;
+  display: inline-block;
+  border-radius: 40px;
+}
+.container5-active{
+  display: inline-block;
+  animation: z 2s 1 ease-in-out;
+}
+
+@keyframes z {
+  0%{}
+  20%{
+    transform: translate(500px, 0px);
+    background: blue;
+    opacity: 2.5;
+  }
+  60%{
+    transform: translate(0px, 500px);
+    background: blue;
+    opacity: 2.5;
+  }
+
+  100%{
+    transform: translate(500px, 500px);
+    background: green;
+    opacity: 50.0;
+  }
+}
+/*this is the css for the Reverse Z*/
+.container6{
+  width: 190px;
+  height: 190px;
+  margin: 3px;
+  background: #BDF400;
+  display: inline-block;
+  border-radius: 40px;
+}
+.container6-active{
+  display: inline-block;
+  animation: zrev 2s 1 ease-in-out;
+}
+
+@keyframes zrev {
+  0%{}
+  20%{
+    transform: translate(-500px, 0px);
+    background: pink;
+    opacity: 2.5;
+  }
+  60%{
+    transform: translate(0px, 500px);
+    background: purple;
+    opacity: 2.5;
+  }
+
+  100%{
+    transform: translate(-500px, 500px);
+    background: magenta;
+    opacity: 50.0;
+  }
+}
+/*this is the css for the U Formation*/
+.container7{
+  width: 190px;
+  height: 190px;
+  margin: 3px;
+  background: #BDF400;
+  display: inline-block;
+  border-radius: 40px;
+}
+.container7-active{
+  display: inline-block;
+  animation: u 2s 1 ease-in-out;
+}
+
+@keyframes u {
+  0%{}
+  20%{
+    transform: translate(0px, 500px);
+    background: lightblue;
+    opacity: 2.5;
+  }
+  60%{
+    transform: translate(-300px, 500px);
+    background: dodgerblue;
+    opacity: 2.5;
+  }
+
+  100%{
+    transform: translate(-300px, 0px);
+    background: skyblue;
+    opacity: 50.0;
+  }
+}
+/*this is the css for the X Formation*/
+.container8{
+  width: 190px;
+  height: 190px;
+  margin: 3px;
+  background: #BDF400;
+  display: inline-block;
+  border-radius: 40px;
+}
+.container8-active{
+  display: inline-block;
+  animation: x 2s 1 ease-in-out;
+}
+
+@keyframes x {
+  0%{}
+  20%{
+    transform: translate(-400px, 500px);
+    background: lightblue;
+    opacity: 50.0;
+  }
+  60%{
+    transform: translate(100px, 500px);
+    background: dodgerblue;
+    opacity: 2.0;
+  }
+
+  100%{
+    transform: translate(-400px, 0px);
+    background: skyblue;
+    opacity: 50.0;
+  }
+}
+/*this is the css for the O Formation*/
+.container9{
+  width: 190px;
+  height: 190px;
+  margin: 3px;
+  background: #BDF400;
+  display: inline-block;
+  border-radius: 40px;
+}
+.container9-active{
+  display: inline-block;
+  animation: o 2s 1 ease-in-out;
+}
+
+@keyframes o {
+  0%{}
+  20%{
+    transform: translate(0px, -400px);
+    background: lightblue;
+    opacity: 50.0;
+  }
+  40%{
+    transform: translate(400px, -400px);
+    background: lightblue;
+    opacity: 50.0;
+  }
+  60%{
+    transform: translate(400px, 0px);
+    background: dodgerblue;
+    opacity: 2.0;
+  }
+  80%{
+    transform: translate(-10px, 0px);
+    background: dodgerblue;
+    opacity: 2.0;
+  }
+  100%{
+    transform: translate(0px, 0px);
+    background: skyblue;
+    opacity: 50.0;
+  }
+}
+/*this is the css for the M Formation*/
+.container10{
+  width: 190px;
+  height: 190px;
+  margin: 3px;
+  background: #BDF400;
+  display: inline-block;
+  border-radius: 40px;
+}
+.container10-active{
+  display: inline-block;
+  animation: m 2s 1 ease-in-out;
+}
+
+@keyframes m {
+  0%{}
+  20%{
+    transform: translate(0px, -400px);
+    background: lightblue;
+    opacity: 50.0;
+  }
+  40%{
+    transform: translate(400px, 0px);
+    background: lightblue;
+    opacity: 50.0;
+  }
+  60%{
+    transform: translate(800px, -400px);
+    background: dodgerblue;
+    opacity: 2.0;
+  }
+  80%{
+    transform: translate(800px, 0px);
+    background: dodgerblue;
+    opacity: 2.0;
+  }
+  100%{
+    transform: translate(0px, 0px);
+    background: skyblue;
+    opacity: 50.0;
+  }
+}
+/*this is the css for the Grow*/
+.container11{
+  width: 190px;
+  height: 190px;
+  margin: 3px;
+  background: #BDF400;
+  display: inline-block;
+  border-radius: 40px;
+}
+.container11-active{
+  display: inline-block;
+  animation: grow 1s 1 ease-in-out;
+
+}
+
+@keyframes grow {
+  0%{}
+  20%{
+    transform: scale(2.3);
+    background: lightblue;
+    opacity: 50.0;
+  }
+  100%{
+    background: dodgerblue;
+    opacity: 2.0;
+  }
+}
+/*this is the css for the Shrink*/
+.container12{
+  width: 190px;
+  height: 190px;
+  margin: 3px;
+  background: #BDF400;
+  display: inline-block;
+  border-radius: 40px;
+}
+.container12-active{
+  display: inline-block;
+  animation: shrink 1s 1 ease-in-out;
+
+}
+
+@keyframes shrink {
+  0%{}
+  20%{
+    transform: scale(.1);
+    background: lightblue;
+    opacity: 50.0;
+  }
+  100%{
+    background: dodgerblue;
+    opacity: 2.0;
+  }
+}
+/*this is the css for the Pulse*/
+.container13{
+  width: 190px;
+  height: 190px;
+  margin: 3px;
+  background: #BDF400;
+  display: inline-block;
+  border-radius: 40px;
+  box-shadow: 0 0 0 rgba(0,169,44, 0.4);
+}
+.container13-active{
+  display: inline-block;
+  animation: pulse 1s 1 ease-in-out;
+}
+
+@keyframes pulse {
+  0%{}
+  10%{
+    box-shadow: 0 0 0 100px rgba(0,255,0, .1);
+    background: #BDF400;
+    opacity: 50.0;
+  }
+  50%{
+    box-shadow: 0 0 0 10px rgba(0,255,0, .1);
+    background: #BDF400;
+    opacity: 2.0;
+  }
+  100%{
+    box-shadow: 0 0 0 1px rgba(0,255,0, .1);
+    background: #BDF400;
+    opacity: 2.0;
+  }
+}
+/*this is the css for the Shake*/
+.container14{
+  width: 190px;
+  height: 190px;
+  margin: 3px;
+  background: #BDF400;
+  display: inline-block;
+  border-radius: 40px;
+  float: none;
+}
+.container14-active{
+  animation: shake .5s 1 ease-in-out;
+  animation-direction: alternate, reverse, normal;
+}
+@keyframes shake {
+  0%{}
+  20%{
+    transform: translate(-20px, 0px);
+    background: blue;
+    opacity: 2.5;
+  }
+  40%{
+    transform: translate(20px, 0px);
+    background: blue;
+    opacity: 2.5;
+  }
+  60%{
+    transform: translate(-20px, 0px);
+    background: blue;
+    opacity: 2.5;
+  }
+  80%{
+    transform: translate(20px, 0px);
+    background: blue;
+    opacity: 2.5;
+  }
+  100%{
+    transform: translate(0px, 0px);
+    background: green;
+    opacity: 50.0;
+  }
+}
+/*this is the css for the Jump*/
+.container15{
+  width: 190px;
+  height: 190px;
+  margin: 3px;
+  background: #BDF400;
+  display: inline-block;
+  border-radius: 40px;
+  float: none;
+}
+.container15-active{
+  animation: jump .5s 1 ease-in-out;
+  animation-direction: alternate, reverse, normal;
+}
+@keyframes jump {
+  0%{}
+  20%{
+    transform: translate(0px, -60px);
+    background: blue;
+    opacity: 2.5;
+  }
+  40%{
+    transform: translate(0px, 0px);
+    background: blue;
+    opacity: 2.5;
+  }
+  60%{
+    transform: translate(0px, -200px);
+    background: blue;
+    opacity: 2.5;
+  }
+  80%{
+    transform: translate(0px, -100px);
+    background: blue;
+    opacity: 2.5;
+  }
+  100%{
+    transform: translate(0px, 0px);
+    background: green;
+    opacity: 50.0;
+  }
+}
+/*this is the css for the Spinner*/
+.container16{
+  width: 190px;
+  height: 190px;
+  margin: 3px;
+  background: #BDF400;
+  display: inline-block;
+  border-radius: 40px;
+}
+.container16-active{
+  display: inline-block;
+  animation: spin 1s 1 ease-in-out;
+}
+
+@keyframes spin {
+  0%{}
+  10%{
+    transform: translate(0px, 0px)
+    rotate(-900deg);
+    background: #BDF400;
+    opacity: 50.0;
+  100%{
+    transform: translate(0px, 0px)
+    rotate(0deg);
+    background: #BDF400;
+    opacity: 2.0;
+  }
+}
+
+  </style>
+  <body>
+    <div class="mainMargin">
+      <div id="id" class="container">
+        <h1 class="h1">Tumble Flip</h1>
+      </div>
+      <div id="id1" class="container2">
+        <h1 class="h1">Front Flip</h1>
+      </div>
+      <div id="id2" class="container3">
+        <h1 class="h1">Back Flip</h1>
+      </div>
+      <div id="id3" class="container4">
+        <h1 class="h1">Drop Bounce</h1>
+      </div>
+      <div id="id4" class="container5">
+        <h1 class="h1">Z Formation</h1>
+      </div>
+      <div id="id4" class="container6">
+        <h1 class="h1">Reverse Z</h1>
+      </div>
+      <div id="id4" class="container7">
+        <h1 class="h1">U Formation</h1>
+      </div>
+      <div id="id4" class="container8">
+        <h1 class="h1">X Formation</h1>
+      </div>
+      <br>
+      <div class="containerInst">
+        <h1 class="instructions">Click each square to watch the animation.</h1>
+      </div>
+
+      <div id="id4" class="container9">
+        <h1 class="h1">O Formation</h1>
+      </div>
+      <div id="id4" class="container10">
+        <h1 class="h1">M Formation</h1>
+      </div>
+      <div id="id4" class="container11">
+        <h1 class="h1">Grow</h1>
+      </div>
+      <div id="id4" class="container12">
+        <h1 class="h1">Shrink</h1>
+      </div>
+      <div id="id4" class="container13">
+        <h1 class="h1">Pulse</h1>
+      </div>
+      <div id="id4" class="container14">
+        <h1 class="h1">Shake</h1>
+      </div>
+      <div id="id4" class="container15">
+        <h1 class="h1">Jump</h1>
+      </div>
+      <div id="id4" class="container16">
+        <h1 class="h1">Spinner</h1>
+      </div>
+
+    </div>
+
+
+    <script type="text/javascript">
+    var $container = $('.container')
+    var $container2 = $('.container2')
+    var $container3 = $('.container3')
+    var $container4 = $('.container4')
+    var $container5 = $('.container5')
+    var $container6 = $('.container6')
+    var $container7 = $('.container7')
+    var $container8 = $('.container8')
+    var $container9 = $('.container9')
+    var $container10 = $('.container10')
+    var $container11 = $('.container11')
+    var $container12 = $('.container12')
+    var $container13 = $('.container13')
+    var $container14 = $('.container14')
+    var $container15 = $('.container15')
+    var $container16 = $('.container16')
+
+    // JavaScript click funtion for Tumble Flip
+    $container.on('click', function(){
+      $(this).toggleClass('container-active');
+      setTimeout(function() {
+        $container.removeClass('container-active')
+      }, 1000);
+      console.log("Tumble Flip clicked")
+    })
+
+    // JavaScript click funtion for Front Flip
+    $container2.on('click', function(){
+      $(this).toggleClass('container2-active');
+      setTimeout(function() {
+        $container2.removeClass('container2-active')
+      }, 1000);
+      console.log("Front Flip clicked")
+    })
+
+    // JavaScript click funtion for Back Flip
+    $container3.on('click', function(){
+      $(this).toggleClass('container3-active');
+      setTimeout(function() {
+        $container3.removeClass('container3-active')
+      }, 1000);
+      console.log("Back Flip clicked")
+    })
+
+    // JavaScript click funtion for Drop Bounce
+    $container4.on('click', function(){
+      $(this).toggleClass('container4-active');
+      setTimeout(function() {
+        $container4.removeClass('container4-active')
+      }, 2000);
+      console.log("Drop Bounce clicked")
+    })
+
+    // JavaScript click funtion for Z Formation
+    $container5.on('click', function(){
+      $(this).toggleClass('container5-active');
+      setTimeout(function() {
+        $container5.removeClass('container5-active')
+      }, 2000);
+      console.log("Z Formation clicked")
+    })
+
+    // JavaScript click funtion for Reverse Z Formation
+    $container6.on('click', function(){
+      $(this).toggleClass('container6-active');
+      setTimeout(function() {
+        $container6.removeClass('container6-active')
+      }, 2000);
+      console.log("Reverse Z clicked")
+    })
+
+    // JavaScript click funtion for U Formation
+    $container7.on('click', function(){
+      $(this).toggleClass('container7-active');
+      setTimeout(function() {
+        $container7.removeClass('container7-active')
+      }, 2000);
+      console.log("U Formation clicked")
+    })
+
+    // JavaScript click funtion for X Formation
+    $container8.on('click', function(){
+      $(this).toggleClass('container8-active');
+      setTimeout(function() {
+        $container8.removeClass('container8-active')
+      }, 2000);
+      console.log("X Formation clicked")
+    })
+
+    // JavaScript click funtion for O Formation
+    $container9.on('click', function(){
+      $(this).toggleClass('container9-active');
+      setTimeout(function() {
+        $container9.removeClass('container9-active')
+      }, 2000);
+      console.log("O Formation clicked")
+    })
+
+    // JavaScript click funtion for M Formation
+    $container10.on('click', function(){
+      $(this).toggleClass('container10-active');
+      setTimeout(function() {
+        $container10.removeClass('container10-active')
+      }, 2000);
+      console.log("M Formation clicked")
+    })
+
+    // JavaScript click funtion for Grow
+    $container11.on('click', function(){
+      $(this).toggleClass('container11-active');
+      setTimeout(function() {
+        $container11.removeClass('container11-active')
+      }, 1000);
+      console.log("Grow clicked")
+    })
+
+    // JavaScript click funtion for Shrink
+    $container12.on('click', function(){
+      $(this).toggleClass('container12-active');
+      setTimeout(function() {
+        $container12.removeClass('container12-active')
+      }, 1000);
+      console.log("Shrink clicked")
+    })
+
+    // JavaScript click funtion for Pulse
+    $container13.on('click', function(){
+      $(this).toggleClass('container13-active');
+      setTimeout(function() {
+        $container13.removeClass('container13-active')
+      }, 1000);
+      console.log("Pulse clicked")
+    })
+
+    // JavaScript click funtion for Shake
+    $container14.on('click', function(){
+      $(this).toggleClass('container14-active');
+      setTimeout(function() {
+        $container14.removeClass('container14-active')
+      }, 1000);
+      console.log("Shake clicked")
+    })
+
+    // JavaScript click funtion for Jump
+    $container15.on('click', function(){
+      $(this).toggleClass('container15-active');
+      setTimeout(function() {
+        $container15.removeClass('container15-active')
+      }, 1000);
+      console.log("Jump clicked")
+    })
+
+    // JavaScript click funtion for Spi
+    $container16.on('click', function(){
+      $(this).toggleClass('container16-active');
+      setTimeout(function() {
+        $container16.removeClass('container16-active')
+      }, 1500);
+      console.log("Spinner clicked")
+    })
+
+    </script>
+
+  </body>
+</html>
